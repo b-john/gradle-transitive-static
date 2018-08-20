@@ -13,3 +13,8 @@ If static library dependency "B" switched implementations to not need "C" and re
 /.../app.o: In function `main':
 /.../app.cpp:9: undefined reference to `FancyPrint(char const*)'
 ```
+
+### How to break current state
+- Remove "static_two" as a dependency from project "static_one"'s build.gradle.
+- Remove references to "static_two" from project "static_one"'s src/main/cpp/impl.cpp (comment out header & function)
+- Rebuild and "app" will fail as it needs "static_two".
