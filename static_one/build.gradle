@@ -1,0 +1,13 @@
+plugins {
+   id  'cpp-library'
+}
+
+library {
+    linkage = [Linkage.STATIC]
+
+    dependencies {
+        // Commenting this out will break downstream "app" module which depends on this being exposed.
+        implementation project(':static_two')
+    }
+
+}

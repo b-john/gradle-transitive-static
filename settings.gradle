@@ -1,0 +1,1 @@
+include 'app', 'static_one', 'static_two'
